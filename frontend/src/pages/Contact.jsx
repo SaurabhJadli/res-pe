@@ -5,12 +5,14 @@ import email from "../assets/logos/email.png"
 import instagram from "../assets/logos/instagram.png"
 import greenChatni from "../assets/greenChatni.jpg"
 import { Button, TextField } from "@mui/material";
+import Navbar from "../components/Navbar";
 
 
 
 export default function Contact() {
   return (
     <div className="position-relative">
+      <Navbar />
       <br />
       <div style={styles.container}>
           <h1>Contact Us – Res-pe</h1>

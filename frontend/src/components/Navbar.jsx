@@ -17,9 +17,9 @@ export default function Navbar() {
                         <a className="navbar-brand" href="#">
                 <img src={respeIcon2NoBG} alt="logo" className="logo-nav img-fluid" loading="lazy" />
                         </a>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <Button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
-                        </button>
+                        </Button>
                         <div className="collapse navbar-collapse position-relative" id="navbarNav">
                             <ul className="navbar-nav nav-li">
                             
@@ -62,12 +62,7 @@ export default function Navbar() {
                                         </Button>
                                 </Link>
                                     </li>
-                                <li className="nav-item">
-                                    <div className="form-check form-switch m-2">
-                                        <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
-                                        <label className="form-check-label"></label>
-                                    </div>
-                                </li>
+                               
                                 <li className="nav-item position-absolute end-0">
                                     {/* <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" style={{color: "#cd4132",}} /> */}
                                     <Link to='/login' className="nav-link">

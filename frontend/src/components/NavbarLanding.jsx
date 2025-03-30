@@ -45,12 +45,7 @@ export default function NavbarLanding() {
                                         </Button>
                                 </Link>
                                     </li>
-                                <li className="nav-item">
-                                    <div className="form-check form-switch m-2">
-                                        <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
-                                        <label className="form-check-label"></label>
-                                    </div>
-                                </li>
+                                
                                 <li className="nav-item position-absolute end-0">
                                 {/* <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" style={{color: "#cd4132",}} /> */}
                                 

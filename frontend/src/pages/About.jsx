@@ -1,11 +1,13 @@
 import Footer from "../components/Footer";
 import chef from "../assets/AIgeneratedChef.png"
 import fries from "../assets/fries.jpg"
+import Navbar from "../components/Navbar";
 
 export default function About() {
   return (
     <div className="position-relative">
-    <h1 className="about-page">About us</h1>
+    <Navbar />
+    <h1 className="about-page p-1">About us</h1>
 \    <div style={styles.container}>
     <br />
       <h2 className="fs-1">Welcome to Res-pe!</h2>
