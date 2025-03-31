@@ -47,7 +47,8 @@ export default function AIchef() {
         />
 
 <Button variant="contained" type="submit" className="rounded-5 mt-3" startIcon={<AddIcon />}>Add ingredient</Button>
-
+{ingredient.length < 4 ? (<p>(add minimum four items)</p>) : 
+(<p> </p>)}
             </form>
 
           {ingredient.length > 0 &&

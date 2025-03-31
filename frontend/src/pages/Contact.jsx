@@ -6,10 +6,43 @@ import instagram from "../assets/logos/instagram.png"
 import greenChatni from "../assets/greenChatni.jpg"
 import { Button, TextField } from "@mui/material";
 import Navbar from "../components/Navbar";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+import axios from "axios";
+import { useRef } from "react";
 
 
 
 export default function Contact() {
+  const formRef = useRef();
+
+  function messageData(e) {
+    e.preventDefault();
+
+    const messageData = {
+        name: e.target.name.value,
+        email: e.target.email.value,
+        subject: e.target.subject.value,
+        message: e.target.message.value
+    }
+    axios.post('http://localhost:3000/api/contact/message', messageData)
+        .then((res) => {
+            // alert(res.data.message)
+            toast.success(res.data.message, {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: true,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+                });
+        })
+        formRef.current.reset();
+
+}
+
   return (
     <div className="position-relative">
       <Navbar />
@@ -53,7 +86,7 @@ export default function Contact() {
             <img src={instagram} className="rounded-circle img-fluid category-img" alt="instagram logo" />
 
             <h3>Social Media</h3>
-            <h4>@respetravel</h4>
+            <h4>@respeChef</h4>
           </li>
         </ul>
       </div>
@@ -62,15 +95,29 @@ export default function Contact() {
         <h2>📝 Send Us a Message</h2>
         <h4>Have a query or suggestion? Fill out the form below, and we'll get back to you as soon as possible!</h4>
 
-        <form onSubmit={(e) => {
-          e.preventDefault();
-          console.log(e.target.name.value);}}>
+        <form onSubmit={messageData} ref={formRef}>
+
+        <ToastContainer
+                            position="top-center"
+                            autoClose={5000}
+                            hideProgressBar
+                            newestOnTop={false}
+                            closeOnClick={false}
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="light"
+                            transition={Bounce}
+                        />
+
           <TextField
             id="name-input"
             placeholder="Name"
             type="text"
             className="form-control m-2"
             name="name"
+            required
           />
 
           <TextField
@@ -79,6 +126,7 @@ export default function Contact() {
             type="email"
             className="form-control mx-2"
             name="email"
+            required
           />
 
           <TextField
@@ -87,6 +135,7 @@ export default function Contact() {
             type="text"
             className="form-control m-2"
             name="subject"
+            required
           />
 
           <TextField
@@ -95,6 +144,7 @@ export default function Contact() {
             type="text"
             className="form-control mx-2"
             name="message"
+            required
           />
 
 <div className="d-flex text-center">
@@ -117,3 +167,6 @@ const styles = {
     fontFamily: 'Arial, sans-serif',
   },
 };
+
+
+// http://localhost:3000/api/contact/message
