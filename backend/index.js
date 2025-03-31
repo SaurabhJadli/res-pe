@@ -2,7 +2,8 @@ let express = require('express')
 let mongoose = require('mongoose')
 const cors = require("cors");
 require('dotenv').config()
-const routes = require('./routes/index')
+const routes = require('./routes/index');
+const mongoConnect = require('./models/mongoDBconnection');
 let app = express()
 app.use(express.json())
 const PORT = process.env.PORT || 3000
@@ -12,13 +13,7 @@ const PORT = process.env.PORT || 3000
 app.use(cors());
 
 //MongoDB Connection
-mongoose.connect(process.env.DBurl)
-    .then(() => {
-        console.log('Connected to Database')
-    })
-    .catch((err) => {
-        console.log('Error connecting to Database')
-    })
+mongoConnect()
 
 app.listen(PORT, () => {
     console.log('Server is running on port ' + PORT)
@@ -30,4 +25,4 @@ app.listen(PORT, () => {
  app.use(routes)
 // api/entry/login
 // api/entry/register
-
+// api/contact/message
