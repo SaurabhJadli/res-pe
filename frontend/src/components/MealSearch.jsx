@@ -9,6 +9,7 @@ export default function MealSearch() {
 
   const [meal, setMeal] = useState([]);
   const [query, setQuery] = useState("");
+  const [alpha, setAlpha] = useState('a')
 
 
   const fetchMeal = async () => {
@@ -34,7 +35,7 @@ useEffect(() => {
   const fetchMeals = async () => {
   
       const response = await axios.get(
-        'https://www.themealdb.com/api/json/v1/1/search.php?f=a'
+        `https://www.themealdb.com/api/json/v1/1/search.php?f=${alpha}`
       );
  // Filter out meals with categories "Chicken", "Pork", and "Beef"
  const filteredMeals = (response.data.meals || []).filter(
@@ -45,7 +46,14 @@ setMeal(filteredMeals); // Set meals or empty array if no result
 };
 
   fetchMeals();
-}, [])
+}, [alpha])
+
+const uppercaseAlphabet = [];
+for (let i = 65; i <= 90; i++) {
+  uppercaseAlphabet.push(String.fromCharCode(i));
+}
+
+console.log(alpha);
 
   return (
     <div className="meal-container">
@@ -64,8 +72,11 @@ setMeal(filteredMeals); // Set meals or empty array if no result
 <SearchRoundedIcon />
 Search</Button>
 
-
 <hr />
+{uppercaseAlphabet.map((alpha) => (
+  <span key={alpha}><Button onClick={() => {setAlpha(alpha)}}>{alpha}</Button></span>
+))}
+
 <div className="d-flex flex-wrap">
         {meal.length > 0 ? (
         meal.map((meal) => (
