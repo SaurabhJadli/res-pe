@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <>
-            <footer className="text-center text-white footer w-100 mt-2">
+            <footer className="text-center text-white footer w-100 mt-2 align-items-end">
                 {/* <!-- Grid container --> */}
                 <div className="container pt-4">
                     {/* <!-- Section: Social media --> */}

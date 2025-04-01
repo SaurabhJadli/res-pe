@@ -14,9 +14,9 @@ export default function Navbar() {
             <header>
                 <nav className="navbar navbar-expand-lg nav">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="#">
-                <img src={respeIcon2NoBG} alt="logo" className="logo-nav img-fluid" loading="lazy" />
-                        </a>
+                        <Link to='/home' className="navbar-brand" aria-current="home">
+                <img src={respeIcon2NoBG} alt="res-pe logo" className="logo-nav img-fluid" loading="lazy" />
+                        </Link>
                         <Button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </Button>

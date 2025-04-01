@@ -4,6 +4,11 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Card from "./RecipeCard";
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function MealSearch() {
 
@@ -73,9 +78,25 @@ console.log(alpha);
 Search</Button>
 
 <hr />
-{uppercaseAlphabet.map((alpha) => (
-  <span key={alpha}><Button onClick={() => {setAlpha(alpha)}}>{alpha}</Button></span>
+<Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2-content"
+          id="panel2-header"
+        >
+          <Typography component="span">
+          <SearchRoundedIcon />
+          Search by first letter</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+          {uppercaseAlphabet.map((alpha) => (
+  <span key={alpha}><Button color="error" onClick={() => {setAlpha(alpha)}}>{alpha}</Button></span>
 ))}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+
 
 <div className="d-flex flex-wrap">
         {meal.length > 0 ? (

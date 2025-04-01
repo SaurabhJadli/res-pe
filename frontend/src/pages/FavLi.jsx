@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardActions from '@mui/material/CardActions';
-import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 export default function FavLi() {
@@ -40,7 +39,5 @@ export default function FavLi() {
         </Button>
       </CardActions>
     </Card>
-
-<Footer />
 </>  )
 }
