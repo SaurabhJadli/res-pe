@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import indianThali from '../assets/indianThali.png';
 import tofu_curry from '../assets/tofu-curry.png';
 import paneer_tikka_masala from '../assets/paneer_tikka_masala.png';
+import { Button } from '@mui/material';
 export default function Home() {
     return (
         <>
@@ -13,12 +14,12 @@ export default function Home() {
 
                     <Link to="/login">
 
-                        <button type="button" className="btn btn-primary btn-lg m-1">Log in</button>
+                        <Button type="button" className="btn btn-primary btn-lg m-1 bg-danger text-light">Log in</Button>
                     </Link>
 
                     <Link to="/signup">
 
-                        <button type="button" className="btn btn-secondary btn-lg m-1">Sign up</button>
+                        <Button type="button" className="btn btn-secondary btn-lg m-1">Sign up</Button>
                     </Link>
                 </div>
             </div>

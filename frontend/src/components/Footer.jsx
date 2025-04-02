@@ -1,3 +1,8 @@
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import GitHubIcon from '@mui/icons-material/GitHub';
+
 export default function Footer() {
     return (
         <>
@@ -12,8 +17,9 @@ export default function Footer() {
                             href="#!"
                             role="button"
                             data-mdb-ripple-color="dark"
-                        ><i className="fab fa-facebook-f"></i
-                        ></a>
+                        >
+                            <FacebookIcon />
+                        </a>
 
                         {/* <!-- Twitter --> */}
                         <a
@@ -21,8 +27,9 @@ export default function Footer() {
                             href="#!"
                             role="button"
                             data-mdb-ripple-color="dark"
-                        ><i className="fab fa-twitter"></i
-                        ></a>
+                        >
+                        <TwitterIcon />
+                        </a>
 
                         {/* <!-- Instagram --> */}
                         <a
@@ -30,8 +37,9 @@ export default function Footer() {
                             href="#!"
                             role="button"
                             data-mdb-ripple-color="dark"
-                        ><i className="fab fa-instagram"></i
-                        ></a>
+                        >
+                       <InstagramIcon />
+                        </a>
 
                         {/* <!-- Github --> */}
                         <a
@@ -39,8 +47,7 @@ export default function Footer() {
                             href="#!"
                             role="button"
                             data-mdb-ripple-color="dark"
-                        ><i className="fab fa-github"></i
-                        ></a>
+                        ><GitHubIcon /></a>
                     </section>
                     {/* <!-- Section: Social media --> */}
                 </div>
@@ -48,7 +55,7 @@ export default function Footer() {
 
                 {/* <!-- Copyright --> */}
                 <div className="text-center text-dark p-3 cp-bg">
-                    &copy; 2025 Res-pe. All rights reserved.
+                  <big> &copy;</big>  2025 Res-pe. All rights reserved.
                 </div>
                 {/* <!-- Copyright --> */}
             </footer>
