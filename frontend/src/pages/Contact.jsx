@@ -10,8 +10,6 @@ import { Bounce, toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 import { useRef } from "react";
 
-
-
 export default function Contact() {
   const formRef = useRef();
 
@@ -148,7 +146,9 @@ export default function Contact() {
           />
 
 <div className="d-flex text-center">
-<Button type="submit" variant="contained" className="btn btn-primary w-100 m-4 p-2">Submit</Button>
+<Button type="submit" variant="contained" className="btn btn-primary w-100 m-4 p-2">
+Submit
+</Button>
 </div>
 
         </form>

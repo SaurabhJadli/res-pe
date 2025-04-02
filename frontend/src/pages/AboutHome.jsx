@@ -1,12 +1,12 @@
-import Footer from "../components/Footer";
 import chef from "../assets/AIgeneratedChef.png"
 import fries from "../assets/fries.jpg"
-import Navbar from "../components/Navbar";
+import Footer from '../components/Footer';
+import NavbarLanding from '../components/NavbarLanding';
 
-export default function About() {
+export default function AboutHome() {
   return (
-    <div className="position-relative">
-    <Navbar />
+<div className="position-relative">
+    <NavbarLanding />
     <h1 className="about-page p-1">About us</h1>
     <div style={styles.container}>
     <br />
@@ -75,5 +75,5 @@ const styles = {
     maxWidth: '800px',
     margin: 'auto',
     fontFamily: 'Arial, sans-serif',
-  },
-};
+  },  
+}

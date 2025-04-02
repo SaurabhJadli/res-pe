@@ -11,10 +11,10 @@ export default function NavbarLanding() {
             <header>
                 <nav className="navbar navbar-expand-lg nav">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="#">
+                        <Link className="navbar-brand" to='/'>
                         <img src={respeIcon2NoBG} alt="logo" className="logo-nav img-fluid" loading="lazy" />
 
-                        </a>
+                        </Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -29,7 +29,7 @@ export default function NavbarLanding() {
                                 </li>
 
                                 <li className="nav-item">
-                                <Link to="/about" className="nav-link">
+                                <Link to="/aboutHome" className="nav-link">
                                 <Button variant="text" color="">
                                     <InfoRoundedIcon sx={{ fontSize: 30, margin: 0.5 }} />
                                         About
@@ -38,7 +38,7 @@ export default function NavbarLanding() {
                                     </li>
 
                                     <li className="nav-item">
-                                <Link to="/contact" className="nav-link">
+                                <Link to="/contactHome" className="nav-link">
                                 <Button variant="text" color="">
                                     <ContactSupportRoundedIcon sx={{ fontSize: 30, margin: 0.5 }} />
                                         Contact
