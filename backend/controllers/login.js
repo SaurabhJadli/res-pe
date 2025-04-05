@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 const userModel = require("../models/users.model");
 
 let login = async (req, res) => {            // Login API
@@ -8,8 +9,25 @@ let login = async (req, res) => {            // Login API
             password
         })
         if (user) {
-           return res.status(200).json({ message: "User logged in successfully!" });
-        }
+
+            const payload = {
+                id: user._id,
+                email: user.email
+              };
+          
+
+            const token = jwt.sign(payload, process.env.JWT_SECRET, {
+                expiresIn: '1h'
+              });
+          console.log(token);
+          
+            return res.cookie('token', token, {
+                httpOnly: true,
+                // secure: true,         // only over HTTPS , Set to true in production (HTTPS)
+                // sameSite: 'Strict',   // prevent CSRF
+                // maxAge: 24 * 60 * 60 * 1000
+              }).json({ message: 'Login successful' });
+            }
         else {
            return res.status(404).json({ message: "User not found!" });
         }

@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Footer from "../components/Footer";
 import Button from '@mui/material/Button';
 import axios from "axios";
@@ -8,6 +8,7 @@ import respeIcon2NoBG from "../assets/logos/respeIcon2NoBG.png"
 
 
 export default function Login() {
+    const navigate = useNavigate()
 
     const handleLogin = async (e) => {
         e.preventDefault()
@@ -25,7 +26,7 @@ export default function Login() {
                 console.log(res.data.message)
                 toast.success(res.data.message, {
                     position: "top-center",
-                    autoClose: 5000,
+                    autoClose: 1500,
                     hideProgressBar: true,
                     closeOnClick: false,
                     pauseOnHover: true,
@@ -33,7 +34,12 @@ export default function Login() {
                     progress: undefined,
                     theme: "light",
                     transition: Bounce,
+                    onClose: () => {
+                     // Redirect to home page after toast is closed
+                    navigate('/home')   // home route
+                }
                 });
+                
             }
         }
         catch (error) {
@@ -89,11 +95,7 @@ export default function Login() {
                             />
                         </div>
 
-                        <Link to="/home">
-
                             <Button type="submit" variant="contained" className="btn btn-primary w-100 mt-3 p-2">Log in</Button>
-
-                        </Link>
 
                         <div className="d-flex position-relative m-4">
                             <p className="mt-3">Not a member?

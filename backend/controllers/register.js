@@ -14,7 +14,7 @@ let register = async (req, res) => {                 // Registration API
               message: "User Exist already",
             });
         }
-
+        
         let user = new userModel({
             name: name,
             email: email,
@@ -23,8 +23,9 @@ let register = async (req, res) => {                 // Registration API
         })
         console.log(user)
         await user.save()
-        res.status(200).json({ message: "User saved successfully!" });
+        res.status(200).json({ message: "Registration successful!" });
         console.log('User Created')
+
     }
     catch (error) {
         res.status(500).json({ error: "Failed to save user" });

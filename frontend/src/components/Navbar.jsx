@@ -65,7 +65,7 @@ export default function Navbar() {
                                
                                 <li className="nav-item position-absolute end-0">
                                     {/* <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" style={{color: "#cd4132",}} /> */}
-                                    <Link to='/login' className="nav-link">
+                                    <Link to='http://localhost:3000/logout' className="nav-link">
                                     <Button variant="text" color='error' startIcon={<LogoutIcon />} >Log out</Button></Link>
                                 </li>
                             </ul>

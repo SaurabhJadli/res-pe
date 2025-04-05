@@ -6,30 +6,51 @@ import respeIcon2NoBG from "../assets/logos/respeIcon2NoBG.png"
 
 export default function Signup() {
 
-    function signupData(e) {
+    async function signupData(e) {
         e.preventDefault();
-
-        const formData = {
-            name: e.target.name.value,
-            email: e.target.email.value,
-            password: e.target.password.value,
-            confirmPassword: e.target.confirmPassword.value
+        
+        try {
+            const formData = {
+                name: e.target.name.value,
+                email: e.target.email.value,
+                password: e.target.password.value,
+                confirmPassword: e.target.confirmPassword.value
+            };
+    
+            const response = await axios.post('http://localhost:3000/api/entry/register', formData);
+            
+            toast.success(response.data.message, {
+                position: "top-center",
+                autoClose: 4000,
+                hideProgressBar: true,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+                onClose: () => {
+                    // Redirect to login page after toast is closed
+                    window.location.href = '/login'; // login route
+            }})
+        } catch (error) {
+            // Handle different error scenarios
+            const errorMessage = error.response?.data?.message || 
+                               error.message || 
+                               'An unexpected error occurred';
+            
+            toast.error(errorMessage, {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: true,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            });
         }
-        axios.post('http://localhost:3000/api/entry/register', formData)
-            .then((res) => {
-                // alert(res.data.message)
-                toast.success(res.data.message, {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: true,
-                    closeOnClick: false,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    transition: Bounce,
-                    });
-            })
     }
 
     return (
