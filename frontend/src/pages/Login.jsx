@@ -17,16 +17,15 @@ export default function Login() {
             password: e.target.password.value,
         }
 
-        console.log(loginData)
-
         try {
             const res = await axios.post('http://localhost:3000/api/entry/login', loginData)
             console.log(res)
+            localStorage.setItem('token', res.data.token);
             if (res.status === 200) {
                 console.log(res.data.message)
                 toast.success(res.data.message, {
                     position: "top-center",
-                    autoClose: 1500,
+                    autoClose: 1000,
                     hideProgressBar: true,
                     closeOnClick: false,
                     pauseOnHover: true,
@@ -35,11 +34,10 @@ export default function Login() {
                     theme: "light",
                     transition: Bounce,
                     onClose: () => {
-                     // Redirect to home page after toast is closed
-                    navigate('/home')   // home route
-                }
+                        // Redirect to home page after toast is closed
+                        navigate('/home')   // home route
+                    }
                 });
-                
             }
         }
         catch (error) {
@@ -61,8 +59,8 @@ export default function Login() {
         <>
             <main className="position-relative login-main">
                 <div className="form-contanier p-4 shadow-lg">
-                <img src={respeIcon2NoBG} alt="logo" className="logo img-fluid mb-2" loading="lazy" />
-                {/* logo */}
+                    <img src={respeIcon2NoBG} alt="logo" className="logo img-fluid mb-2" loading="lazy" />
+                    {/* logo */}
                     <h2 className="text-center">Log in</h2>
 
                     <form className="p-1  form" onSubmit={handleLogin}>
@@ -95,7 +93,7 @@ export default function Login() {
                             />
                         </div>
 
-                            <Button type="submit" variant="contained" className="btn btn-primary w-100 mt-3 p-2">Log in</Button>
+                        <Button type="submit" variant="contained" className="btn btn-primary w-100 mt-3 p-2">Log in</Button>
 
                         <div className="d-flex position-relative m-4">
                             <p className="mt-3">Not a member?
@@ -104,12 +102,9 @@ export default function Login() {
                                 </Link>
                             </p>
                             <p className="mt-3 position-absolute end-0"><a className="link-secondary" href="#">forgot password?</a></p>
-
                         </div>
-
                     </form>
                 </div>
-
             </main>
             <Footer />
         </>)

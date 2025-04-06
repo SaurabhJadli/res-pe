@@ -5,13 +5,20 @@ require('dotenv').config()
 const routes = require('./routes/index');
 const mongoConnect = require('./models/mongoDBconnection');
 const cookieParser = require('cookie-parser');
-const jwtAuth = require('./middle/jwtAuth');
+const jwtAuth = require('./middleware/jwtAuth');
 let app = express()
 const PORT = process.env.PORT || 3000
 
 
+// CORS configuration
+const corsOptions = {
+    origin: 'http://localhost:5173', // Your frontend origin
+    credentials: true // Allow credentials
+  };
+  
+  app.use(cors(corsOptions));
 // Middleware
-app.use(cors());
+// app.use(cors());
 app.use(express.json())
 app.use(cookieParser());
 
@@ -28,10 +35,8 @@ mongoConnect()
 // api/entry/register
 // api/contact/message
 
-  app.get('/logout', (req, res) => {
-    res.clearCookie('token')
-    .redirect("http://localhost:5173/login")
-
+app.get('/protected', jwtAuth, (req, res) => {
+    res.json({ message: `Welcome ${req.user.email}` });
   });
 
 app.listen(PORT, () => {

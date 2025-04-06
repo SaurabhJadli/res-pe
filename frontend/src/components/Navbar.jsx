@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
@@ -9,6 +9,12 @@ import ContactSupportRoundedIcon from '@mui/icons-material/ContactSupportRounded
 import respeIcon2NoBG from "../assets/logos/respeIcon2NoBG.png"
 
 export default function Navbar() {
+    const navigate = useNavigate()
+
+    const handleLogout = ()=>{
+        localStorage.removeItem('token');
+        navigate('/login');
+    }
     return (
         <>
             <header>
@@ -65,8 +71,8 @@ export default function Navbar() {
                                
                                 <li className="nav-item position-absolute end-0">
                                     {/* <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" style={{color: "#cd4132",}} /> */}
-                                    <Link to='http://localhost:3000/logout' className="nav-link">
-                                    <Button variant="text" color='error' startIcon={<LogoutIcon />} >Log out</Button></Link>
+                                
+                                    <Button onClick={handleLogout} variant="text" color='error' startIcon={<LogoutIcon />} >Log out</Button>
                                 </li>
                             </ul>
                         </div>
