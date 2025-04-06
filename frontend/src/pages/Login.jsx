@@ -79,7 +79,15 @@ export default function Login() {
                         />
 
                         <div className="mb-3 form-ele">
-                            <TextField id="Email" label="Email" variant="outlined" className="form-control" aria-describedby="emailHelp" name="email" />
+                            <TextField
+                                id="Email"
+                                label="Email"
+                                variant="outlined"
+                                className="form-control"
+                                aria-describedby="email"
+                                name="email"
+                                type="email"
+                                required />
                         </div>
 
                         <div className="mb-3">
@@ -90,10 +98,16 @@ export default function Login() {
                                 autoComplete="current-password"
                                 className="form-control"
                                 name="password"
-                            />
+                                aria-describedby="password"
+                                required />
                         </div>
 
-                        <Button type="submit" variant="contained" className="btn btn-primary w-100 mt-3 p-2">Log in</Button>
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            className="btn btn-primary w-100 mt-3 p-2">
+                            Log in
+                        </Button>
 
                         <div className="d-flex position-relative m-4">
                             <p className="mt-3">Not a member?
