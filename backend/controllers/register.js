@@ -1,20 +1,24 @@
+const registrationSchema = require("../middleware/registerValidation");
 const userModel = require("../models/users.model");
 
 let register = async (req, res) => {                 // Registration API 
     try {
+        // Validate the request body
+        await registrationSchema.validateAsync(req.body);
+
         let { name, email, password, confirmPassword } = req.body
 
         const emailVerification = await userModel.findOne({
             email,
-          });
+        });
 
-          if (emailVerification) {
+        if (emailVerification) {
             return res.status(200).json({
-              success: false,
-              message: "User Exist already",
+                success: false,
+                message: "User Exist already",
             });
         }
-        
+
         let user = new userModel({
             name: name,
             email: email,
@@ -28,7 +32,10 @@ let register = async (req, res) => {                 // Registration API
 
     }
     catch (error) {
-        res.status(500).json({ error: "Failed to save user" });
+        if (error.isJoi) {
+            return res.status(400).json({ error: error.details[0].message });
+        }
+        return res.status(500).json({ error: "Failed to save user" });
         console.log('Error creating user')
     }
 }
