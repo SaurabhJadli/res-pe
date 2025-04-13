@@ -5,7 +5,6 @@ import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
-import FavLi from './pages/FavLi.jsx'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
@@ -14,6 +13,7 @@ import RecipeDetail from './pages/RecipeDetail.jsx'
 import AboutHome from './pages/AboutHome.jsx'
 import ContactHome from './pages/ContactHome.jsx'
 import PrivateRoute from './components/PrivateRoute.jsx'
+import Category from './pages/Category.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -32,9 +32,9 @@ createRoot(document.getElementById('root')).render(
           <Home />
           </PrivateRoute>
           } />
-        <Route path='/favLi' element={
+        <Route path='/category' element={
           <PrivateRoute>
-          <FavLi />
+          <Category />
           </PrivateRoute>
           } />
         <Route path='/about' element={
