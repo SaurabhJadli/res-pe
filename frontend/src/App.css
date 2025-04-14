@@ -66,6 +66,10 @@ margin-right: .5rem;
   border: solid rgba(143, 125, 93, 0.904);
 }
 
+.forgot-password{
+  margin-top: 400px;
+}
+
 .form{
   padding: 1rem .1rem 1rem .1rem;
 }

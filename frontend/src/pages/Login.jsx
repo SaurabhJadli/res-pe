@@ -115,7 +115,7 @@ export default function Login() {
                                     Sign up
                                 </Link>
                             </p>
-                            <p className="mt-3 position-absolute end-0"><a className="link-secondary" href="#">forgot password?</a></p>
+                            <p className="mt-3 position-absolute end-0"><Link to='/forgotPassword'>forgot password?</Link></p>
                         </div>
                     </form>
                 </div>

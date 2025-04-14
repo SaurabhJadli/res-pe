@@ -14,6 +14,8 @@ import AboutHome from './pages/AboutHome.jsx'
 import ContactHome from './pages/ContactHome.jsx'
 import PrivateRoute from './components/PrivateRoute.jsx'
 import Category from './pages/Category.jsx'
+import ForgetPassword from './pages/ForgetPassword.jsx'
+import ChangePassword from './components/ChangePassword.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -54,6 +56,8 @@ createRoot(document.getElementById('root')).render(
           } />
         <Route path='/aboutHome' element={<AboutHome />} />
         <Route path='/contactHome' element={<ContactHome />} />
+        <Route path='/forgotPassword' element={<ForgetPassword />} />
+        <Route path='/changePassword' element={<ChangePassword />} />
         <Route path='*' element={<h1>404</h1>} />
       </Routes>
     </BrowserRouter>
