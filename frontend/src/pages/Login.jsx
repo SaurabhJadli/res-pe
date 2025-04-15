@@ -5,7 +5,7 @@ import axios from "axios";
 import TextField from '@mui/material/TextField';
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import respeIcon2NoBG from "../assets/logos/respeIcon2NoBG.png"
-
+import Swal from 'sweetalert2'
 
 export default function Login() {
     const navigate = useNavigate()
@@ -41,18 +41,23 @@ export default function Login() {
             }
         }
         catch (error) {
-            console.log(error)
-            toast.error("login failed", {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: true,
-                closeOnClick: false,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                transition: Bounce,
-            });
+            // console.log(error)
+            // toast.error("login failed", {
+            //     position: "top-center",
+            //     autoClose: 5000,
+            //     hideProgressBar: true,
+            //     closeOnClick: false,
+            //     pauseOnHover: true,
+            //     draggable: true,
+            //     progress: undefined,
+            //     theme: "light",
+            //     transition: Bounce,
+            // });
+            Swal.fire({
+                icon: "error",
+                title: "login failed",
+                text: error.response.data.message,
+              });
         }
     }
     return (
@@ -109,7 +114,7 @@ export default function Login() {
                             Log in
                         </Button>
 
-                        <div className="d-flex position-relative m-4">
+                        <div className="d-flex position-relative mt-4">
                             <p className="mt-3">Not a member?
                                 <Link to="/signup">
                                     Sign up

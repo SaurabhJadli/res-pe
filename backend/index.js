@@ -7,6 +7,7 @@ const mongoConnect = require('./models/mongoDBconnection');
 const cookieParser = require('cookie-parser');
 const jwtAuth = require('./middleware/jwtAuth');
 const forgotPassword = require('./controllers/forgotPassword');
+const changePassword = require('./controllers/changePassword');
 let app = express()
 const PORT = process.env.PORT || 3000
 
@@ -37,7 +38,7 @@ mongoConnect()
 // api/contact/message
 
 app.post('/api/entry/forgotPassword', forgotPassword)
-// app.post('/api/entry/changePassword', changePassword)
+app.post('/api/entry/changePassword', changePassword)
 
 app.get('/protected', jwtAuth, (req, res) => {
     res.json({ message: `Welcome ${req.user.email}` });
