@@ -23,27 +23,21 @@ export default function ContactHome() {
           subject: e.target.subject.value,
           message: e.target.message.value
       }
-      const res = axiosLocal.post('/contact/message', messageData)
-          // .then((res) => {
-          //     // alert(res.data.message)
-          //     toast.success(res.data.message, {
-          //         position: "top-center",
-          //         autoClose: 5000,
-          //         hideProgressBar: true,
-          //         closeOnClick: false,
-          //         pauseOnHover: true,
-          //         draggable: true,
-          //         progress: undefined,
-          //         theme: "light",
-          //         transition: Bounce,
-          //         });
-          // })
-
-           Swal.fire({
-                    title: res.data.message,
-                    text: "You clicked the button!",
-                    icon: "success"
+      axiosLocal.post('/contact/message', messageData)
+          .then((res) => {
+              // alert(res.data.message)
+              toast.success(res.data.message, {
+                  position: "top-center",
+                  autoClose: 5000,
+                  hideProgressBar: true,
+                  closeOnClick: false,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "light",
+                  transition: Bounce,
                   });
+          })
           formRef.current.reset();
         }
 
