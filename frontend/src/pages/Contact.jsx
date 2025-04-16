@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import { useRef } from "react";
 import axiosLocal from "../services/axiosLocalInstance";
+import Swal from 'sweetalert2'
 
 export default function Contact() {
   const formRef = useRef();
@@ -22,21 +23,26 @@ export default function Contact() {
         subject: e.target.subject.value,
         message: e.target.message.value
     }
-    axiosLocal.post('/contact/message', messageData)
-        .then((res) => {
-            // alert(res.data.message)
-            toast.success(res.data.message, {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: true,
-                closeOnClick: false,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                transition: Bounce,
-                });
-        })
+    const res = axiosLocal.post('/contact/message', messageData)
+        // .then((res) => {
+        //     // alert(res.data.message)
+        //     toast.success(res.data.message, {
+        //         position: "top-center",
+        //         autoClose: 5000,
+        //         hideProgressBar: true,
+        //         closeOnClick: false,
+        //         pauseOnHover: true,
+        //         draggable: true,
+        //         progress: undefined,
+        //         theme: "light",
+        //         transition: Bounce,
+        //         });
+        // })
+        Swal.fire({
+          title: res.data.message,
+          text: "You clicked the button!",
+          icon: "success"
+        });
         formRef.current.reset();
 
 }

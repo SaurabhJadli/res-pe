@@ -41,18 +41,6 @@ export default function Login() {
             }
         }
         catch (error) {
-            // console.log(error)
-            // toast.error("login failed", {
-            //     position: "top-center",
-            //     autoClose: 5000,
-            //     hideProgressBar: true,
-            //     closeOnClick: false,
-            //     pauseOnHover: true,
-            //     draggable: true,
-            //     progress: undefined,
-            //     theme: "light",
-            //     transition: Bounce,
-            // });
             Swal.fire({
                 icon: "error",
                 title: "login failed",
@@ -71,7 +59,7 @@ export default function Login() {
                     <form className="p-1  form" onSubmit={handleLogin}>
                         <ToastContainer
                             position="top-center"
-                            autoClose={5000}
+                            autoClose={2000}
                             hideProgressBar
                             newestOnTop={false}
                             closeOnClick={false}
