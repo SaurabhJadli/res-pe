@@ -56,6 +56,7 @@ export default function Footer() {
                 {/* <!-- Copyright --> */}
                 <div className="text-center text-dark p-3 cp-bg">
                   <big> &copy;</big>  2025 Res-pe. All rights reserved.
+                <p>Creator: Saurabh Jadli</p>
                 </div>
                 {/* <!-- Copyright --> */}
             </footer>
