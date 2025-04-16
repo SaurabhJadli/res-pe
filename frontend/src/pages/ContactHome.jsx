@@ -6,9 +6,9 @@ import instagram from "../assets/logos/instagram.png"
 import greenChatni from "../assets/greenChatni.jpg"
 import { Button, TextField } from "@mui/material";
 import { Bounce, toast, ToastContainer } from "react-toastify";
-import axios from "axios";
 import { useRef } from "react";
 import NavbarLanding from "../components/NavbarLanding";
+import axiosLocal from "../services/axiosLocalInstance";
 
 export default function ContactHome() {
     const formRef = useRef();
@@ -22,7 +22,7 @@ export default function ContactHome() {
           subject: e.target.subject.value,
           message: e.target.message.value
       }
-      axios.post('http://localhost:3000/api/contact/message', messageData)
+      axiosLocal.post('/contact/message', messageData)
           .then((res) => {
               // alert(res.data.message)
               toast.success(res.data.message, {
