@@ -1,7 +1,7 @@
 // PrivateRoute.jsx
 import { useNavigate } from "react-router";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axiosLocal from "../services/axiosLocalInstance";
 
 const PrivateRoute = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -19,7 +19,7 @@ const PrivateRoute = ({ children }) => {
   
         try {
           // Verify with backend
-          const response = await axios.get('http://localhost:3000/protected', {
+          const response = await axiosLocal.get('/protected', {
             headers: {
               Authorization: `Bearer ${token}`
             }

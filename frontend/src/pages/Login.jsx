@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router";
 import Footer from "../components/Footer";
 import Button from '@mui/material/Button';
-import axios from "axios";
 import TextField from '@mui/material/TextField';
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import respeIcon2NoBG from "../assets/logos/respeIcon2NoBG.png"
 import Swal from 'sweetalert2'
+import axiosLocal from "../services/axiosLocalInstance";
 
 export default function Login() {
     const navigate = useNavigate()
@@ -18,7 +18,7 @@ export default function Login() {
         }
 
         try {
-            const res = await axios.post('http://localhost:3000/api/entry/login', loginData)
+            const res = await axiosLocal.post('/entry/login', loginData)
             console.log(res)
             localStorage.setItem('token', res.data.token);
             if (res.status === 200) {

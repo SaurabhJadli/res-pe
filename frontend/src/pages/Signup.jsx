@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router";
 import Footer from "../components/Footer";
-import axios from "axios";
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import respeIcon2NoBG from "../assets/logos/respeIcon2NoBG.png"
+import axiosLocal from "../services/axiosLocalInstance";
 
 export default function Signup() {
     const navigate = useNavigate()
@@ -18,7 +18,7 @@ export default function Signup() {
                 confirmPassword: e.target.confirmPassword.value
             };
     
-            const response = await axios.post('http://localhost:3000/api/entry/register', formData);
+            const response = await axiosLocal.post('/entry/register', formData);
             
             toast.success(response.data.message, {
                 position: "top-center",

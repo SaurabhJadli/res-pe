@@ -6,9 +6,9 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Box, Button } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router';
 import Swal from 'sweetalert2'
+import axiosLocal from '../services/axiosLocalInstance';
 
 export default function ChangePassword() {
     const navigate = useNavigate()
@@ -30,7 +30,7 @@ export default function ChangePassword() {
             confirmPassword: e.target.confirmPassword.value,
         }
         try {
-            const response = await axios.post('http://localhost:3000/api/entry/changePassword', Data);
+            const response = await axiosLocal.post('/entry/changePassword', Data);
             console.log(response)
             if (response.status === 200) {
                 await Swal.fire({

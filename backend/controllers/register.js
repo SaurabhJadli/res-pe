@@ -6,7 +6,7 @@ let register = async (req, res) => {                 // Registration API
         // Validate the request body
         await registrationSchema.validateAsync(req.body);
 
-        let { name, email, password, confirmPassword } = req.body
+        let { name, email, password } = req.body
 
         const emailVerification = await userModel.findOne({
             email,
@@ -23,7 +23,6 @@ let register = async (req, res) => {                 // Registration API
             name: name,
             email: email,
             password: password,
-            confirmPassword: confirmPassword
         })
         console.log(user)
         await user.save()

@@ -4,9 +4,9 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
-import axios from 'axios';
 import { Bounce, toast, ToastContainer } from 'react-toastify';
 import Swal from 'sweetalert2'
+import axiosLocal from '../services/axiosLocalInstance';
 
 export default function ForgetPassword() {
     const navigate = useNavigate()
@@ -19,7 +19,7 @@ export default function ForgetPassword() {
             email: email,
         };
         try {
-            const response = await axios.post('http://localhost:3000/api/entry/forgotPassword', data)
+            const response = await axiosLocal.post('/entry/forgotPassword', data)
             if (response.status === 200) {
                 toast.success(response.data.message, {
                     position: "top-center",
