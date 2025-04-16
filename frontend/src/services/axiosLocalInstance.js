@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosLocal = axios.create({
-    baseURL: "http://localhost:3000/api",
+    baseURL: "https://res-pe-backend.onrender.com/api",
     headers: {
         "Content-Type": "application/json",
     },
