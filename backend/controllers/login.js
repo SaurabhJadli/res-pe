@@ -21,12 +21,6 @@ let login = async (req, res) => {            // Login API
                 expiresIn: '1h'
             });
 
-            // return res.cookie('token', token, {
-            //     httpOnly: true,
-            //     // secure: true,         // only over HTTPS , Set to true in production (HTTPS)
-            //     // sameSite: 'Strict',   // prevent CSRF
-            //     // maxAge: 24 * 60 * 60 * 1000
-            //   })
             res.status(200).json({
                 token: token,
                 message: 'Login successful'

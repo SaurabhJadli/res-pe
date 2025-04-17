@@ -17,7 +17,7 @@ export default function ChangePassword() {
 
     const goBack = () => {
         navigate(-1); // Goes back one step in history
-      };
+    }
 
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);

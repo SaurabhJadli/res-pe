@@ -28,7 +28,7 @@ export default function Footer() {
                             role="button"
                             data-mdb-ripple-color="dark"
                         >
-                        <TwitterIcon />
+                            <TwitterIcon />
                         </a>
 
                         {/* <!-- Instagram --> */}
@@ -38,7 +38,7 @@ export default function Footer() {
                             role="button"
                             data-mdb-ripple-color="dark"
                         >
-                       <InstagramIcon />
+                            <InstagramIcon />
                         </a>
 
                         {/* <!-- Github --> */}
@@ -55,8 +55,8 @@ export default function Footer() {
 
                 {/* <!-- Copyright --> */}
                 <div className="text-center text-dark p-3 cp-bg">
-                  <big> &copy;</big>  2025 Res-pe. All rights reserved.
-                <p>Creator: Saurabh Jadli</p>
+                    <big> &copy;</big>  2025 Res-pe. All rights reserved.
+                    <p>Creator: Saurabh Jadli</p>
                 </div>
                 {/* <!-- Copyright --> */}
             </footer>

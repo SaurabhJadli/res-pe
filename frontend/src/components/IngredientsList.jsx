@@ -10,15 +10,12 @@ import SendIcon from '@mui/icons-material/Send';
 export default function IngredientsList(props) {
     // eslint-disable-next-line react/prop-types
     const ingredientsListItems = props.ingredient.map(ingredient => (
-        // <li key={ingredient}>{ingredient}</li>
-
         <ListItemButton key={ingredient}>
         <ListItemIcon>
           <SendIcon />
         </ListItemIcon>
         <ListItemText primary={ingredient} />
       </ListItemButton>
-     
     ))
     return (
         <section className="p-4">
@@ -31,7 +28,6 @@ export default function IngredientsList(props) {
     >
                 {ingredientsListItems}
                 </List>
-                
             {
                 // eslint-disable-next-line react/prop-types
                 props.ingredient.length > 3 &&
@@ -46,7 +42,6 @@ export default function IngredientsList(props) {
                         // eslint-disable-next-line react/prop-types
                         props.getRecipe}>Get a recipe</Button>
                 </div>}
-
         </section>
     )
 }

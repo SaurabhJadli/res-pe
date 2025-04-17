@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000
 const corsOptions = {
   origin: process.env.Frontend_baseURL, // Your frontend origin
   credentials: true // Allow credentials
-};
+}
 
 // Middleware
 app.use(cors(corsOptions));
@@ -25,7 +25,6 @@ app.use(cookieParser());
 
 //MongoDB Connection
 mongoConnect()
-
 
 //API's
 app.use(routes)

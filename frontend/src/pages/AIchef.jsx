@@ -26,7 +26,6 @@ export default function AIchef() {
         const newIngredient = formData.get("ingredient")
         setIngredient(prevIngredients => [...prevIngredients, newIngredient])
     }
-
     return (
         <>
             <Navbar />
@@ -55,7 +54,6 @@ export default function AIchef() {
                         getRecipe={getRecipe}
                     />
                 }
-
                 {recipe && <Recipe recipe={recipe} />}
             </main>
         </>)

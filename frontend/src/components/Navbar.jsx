@@ -109,14 +109,12 @@ export default function Navbar() {
 
                                 <li className="nav-item position-absolute end-0">
                                     {/* <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" style={{color: "#cd4132",}} /> */}
-
                                     <Button onClick={handleLogout} variant="text" color='error' startIcon={<LogoutIcon />} >Log out</Button>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-
             </header>
         </>)
 }

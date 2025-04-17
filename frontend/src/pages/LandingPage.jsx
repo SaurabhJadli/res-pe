@@ -13,12 +13,10 @@ export default function Home() {
                     <h4>Discover, Cook, Savor – Your Culinary Journey Starts Here!</h4>
 
                     <Link to="/login">
-
                         <Button type="button" className="btn btn-primary btn-lg m-1 bg-danger text-light">Log in</Button>
                     </Link>
 
                     <Link to="/signup">
-
                         <Button type="button" className="btn btn-secondary btn-lg m-1">Sign up</Button>
                     </Link>
                 </div>

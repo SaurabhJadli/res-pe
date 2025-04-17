@@ -18,36 +18,35 @@ export default function Contact() {
     e.preventDefault();
 
     const messageData = {
-        name: e.target.name.value,
-        email: e.target.email.value,
-        subject: e.target.subject.value,
-        message: e.target.message.value
+      name: e.target.name.value,
+      email: e.target.email.value,
+      subject: e.target.subject.value,
+      message: e.target.message.value
     }
     axiosLocal.post('/contact/message', messageData)
-        .then((res) => {
-            // alert(res.data.message)
-            toast.success(res.data.message, {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: true,
-                closeOnClick: false,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                transition: Bounce,
-                });
-        })
-        formRef.current.reset();
-
-}
+      .then((res) => {
+        // alert(res.data.message)
+        toast.success(res.data.message, {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      })
+    formRef.current.reset();
+  }
 
   return (
     <div className="position-relative">
       <Navbar />
       <br />
       <div style={styles.container}>
-          <h1>Contact Us – Res-pe</h1>
+        <h1>Contact Us – Res-pe</h1>
         <div className="bg-primary-subtle rounded p-3">
           <img src={greenChatni} className="img-fluid rounded-4" alt="road from forest"></img>
           <br /><br />
@@ -61,16 +60,14 @@ export default function Contact() {
           <li className="m-4">
             <img src={contact} className="rounded-circle img-fluid category-img" alt="phone logo" />
 
-            <h3>
-              Phone</h3>
+            <h3>Phone</h3>
             <h4>248 123-4567</h4>
           </li>
 
           <li className="m-4">
             <img src={email} className=" img-fluid category-img" alt="email logo" />
 
-            <h3>
-              Email</h3>
+            <h3>Email</h3>
             <h4>support@respe.com</h4>
           </li>
 
@@ -95,20 +92,19 @@ export default function Contact() {
         <h4>Have a query or suggestion? Fill out the form below, and we'll get back to you as soon as possible!</h4>
 
         <form onSubmit={messageData} ref={formRef}>
-
-        <ToastContainer
-                            position="top-center"
-                            autoClose={5000}
-                            hideProgressBar
-                            newestOnTop={false}
-                            closeOnClick={false}
-                            rtl={false}
-                            pauseOnFocusLoss
-                            draggable
-                            pauseOnHover
-                            theme="light"
-                            transition={Bounce}
-                        />
+          <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+          />
 
           <TextField
             id="name-input"
@@ -146,11 +142,11 @@ export default function Contact() {
             required
           />
 
-<div className="d-flex text-center">
-<Button type="submit" variant="contained" className="btn btn-primary w-100 m-4 p-2">
-Submit
-</Button>
-</div>
+          <div className="d-flex text-center">
+            <Button type="submit" variant="contained" className="btn btn-primary w-100 m-4 p-2">
+              Submit
+            </Button>
+          </div>
 
         </form>
       </div>

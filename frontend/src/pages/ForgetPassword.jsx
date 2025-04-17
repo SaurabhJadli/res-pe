@@ -17,7 +17,7 @@ export default function ForgetPassword() {
 
         const data = {
             email: email,
-        };
+        }
         try {
             const response = await axiosLocal.post('/entry/forgotPassword', data)
             if (response.status === 200) {
@@ -35,7 +35,7 @@ export default function ForgetPassword() {
                         // Redirect to home page after toast is closed
                         navigate('/changePassword', { state: data })   // home route
                     }
-                });
+                })
             }
         }
         catch {
@@ -45,7 +45,6 @@ export default function ForgetPassword() {
               });
         }
     }
-
     return (
         <>
             <h4 className='m-4'>

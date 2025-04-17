@@ -30,33 +30,32 @@ export default function Category() {
 
   return (
     <div>
-    <Navbar />
+      <Navbar />
       <h4>Category: {category}</h4>
       <div className="d-flex flex-wrap">
         {meal.length > 0 ? (
           meal.map((item) => (
 
-            <Card sx={{ maxWidth: 345,minWidth: 345, margin: 4 }} key={item.idMeal}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image={item.strMealThumb}
-          alt={item.strMeal}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-          {item.strMeal}
-          </Typography>
-        </CardContent>
-          <Link to={`/recipeDetail/${item.idMeal}`} target='_blank'>
-        <Button variant='contained' size="medium" color="primary">
-        View Recipe
-        </Button>
-        </Link>
-      </CardActionArea>
-    </Card>
-           
+            <Card sx={{ maxWidth: 345, minWidth: 345, margin: 4 }} key={item.idMeal}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={item.strMealThumb}
+                  alt={item.strMeal}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {item.strMeal}
+                  </Typography>
+                </CardContent>
+                <Link to={`/recipeDetail/${item.idMeal}`} target='_blank'>
+                  <Button variant='contained' size="medium" color="primary">
+                    View Recipe
+                  </Button>
+                </Link>
+              </CardActionArea>
+            </Card>
           ))
         ) : (
           <p className="mx-auto mt-5 fs-5">No meals found</p>

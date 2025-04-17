@@ -12,49 +12,46 @@ export default function NavbarLanding() {
                 <nav className="navbar navbar-expand-lg nav">
                     <div className="container-fluid">
                         <Link className="navbar-brand" to='/'>
-                        <img src={respeIcon2NoBG} alt="logo" className="logo-nav img-fluid" loading="lazy" />
-
+                            <img src={respeIcon2NoBG} alt="logo" className="logo-nav img-fluid" loading="lazy" />
                         </Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse position-relative" id="navbarNav">
                             <ul className="navbar-nav">
-                            <li className="nav-item">
+                                <li className="nav-item">
                                     <Link to='/' className="nav-link active" aria-current="home">
-                                    <Button variant="text" color="">
-                                    <HomeRoundedIcon sx={{ fontSize: 30, margin: 0.5 }} />
-                                    Home
-                                    </Button></Link>
+                                        <Button variant="text" color="">
+                                            <HomeRoundedIcon sx={{ fontSize: 30, margin: 0.5 }} />
+                                            Home
+                                        </Button></Link>
                                 </li>
 
                                 <li className="nav-item">
-                                <Link to="/aboutHome" className="nav-link">
-                                <Button variant="text" color="">
-                                    <InfoRoundedIcon sx={{ fontSize: 30, margin: 0.5 }} />
-                                        About
+                                    <Link to="/aboutHome" className="nav-link">
+                                        <Button variant="text" color="">
+                                            <InfoRoundedIcon sx={{ fontSize: 30, margin: 0.5 }} />
+                                            About
                                         </Button>
                                     </Link>
-                                    </li>
+                                </li>
 
-                                    <li className="nav-item">
-                                <Link to="/contactHome" className="nav-link">
-                                <Button variant="text" color="">
-                                    <ContactSupportRoundedIcon sx={{ fontSize: 30, margin: 0.5 }} />
-                                        Contact
+                                <li className="nav-item">
+                                    <Link to="/contactHome" className="nav-link">
+                                        <Button variant="text" color="">
+                                            <ContactSupportRoundedIcon sx={{ fontSize: 30, margin: 0.5 }} />
+                                            Contact
                                         </Button>
-                                </Link>
-                                    </li>
-                                
+                                    </Link>
+                                </li>
+
                                 <li className="nav-item position-absolute end-0">
-                                {/* <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" style={{color: "#cd4132",}} /> */}
-                                
+                                    {/* <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" style={{color: "#cd4132",}} /> */}
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-
             </header>
         </>)
 }

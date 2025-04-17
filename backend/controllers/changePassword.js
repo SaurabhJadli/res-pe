@@ -10,12 +10,11 @@ const changePassword = async (req, res) => {
         // Update the user's password
         const user = await userModel.findOne({
             email: email,
-            });
+        })
 
-            user.password = newPassword;
+        user.password = newPassword;
         await user.save();
-        return res.status(200).json({ message: 'Password changed successfully' });
-
+        return res.status(200).json({ message: 'Password changed successfully' })
     }
     catch (error) {
         return res.status(400).json({ message: 'error while changing password' })

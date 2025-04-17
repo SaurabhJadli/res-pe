@@ -28,7 +28,6 @@ let register = async (req, res) => {                 // Registration API
         await user.save()
         res.status(200).json({ message: "Registration successful!" });
         console.log('User Created')
-
     }
     catch (error) {
         if (error.isJoi) {
