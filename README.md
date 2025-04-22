@@ -30,13 +30,13 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/res-pe.git
+git clone https://github.com/SaurabhJadli/res-pe.git
 cd res-pe
 
 # Install client dependencies
-cd client
+cd frontend
 npm install
 
 # Install server dependencies
-cd ../server
+cd ../backend
 npm install
