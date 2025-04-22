@@ -40,3 +40,27 @@ npm install
 # Install server dependencies
 cd ../backend
 npm install
+
+
+👤 User Manual
+🏠 Homepage
+Browse featured recipes.
+
+Use the search bar to find recipes by name or ingredients.
+
+🔐 Register/Login
+Click Sign Up to create a new account.
+
+Already registered? Click Login to access your account.
+
+🍲 Add Recipe
+Navigate to "Add Recipe".
+
+Fill out the form with the recipe title, ingredients, steps, and optionally an image.
+
+Click "Submit" to add your recipe.
+
+❤️ Save & View Favorites
+Click the heart icon to save a recipe.
+
+View your favorites under the “Favorites” section after logging in.
