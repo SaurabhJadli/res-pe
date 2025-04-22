@@ -8,7 +8,6 @@
 
 - 🔍 **Browse Recipes** – Explore a wide range of recipes across various categories.
 - 📝 **Register/Login** – Create an account and securely log in.
-- 📤 **Add Your Recipes** – Share your own recipes with the community.
 - ❤️ **Save Favorites** – Save your favorite dishes for quick access later.
 - 📱 **Responsive Design** – Works smoothly on desktop, tablet, and mobile.
 
@@ -52,11 +51,6 @@ npm install
 🔐 Register/Login
 - Click Sign Up to create a new account.
 - Already registered? Click Login to access your account.
-
-🍲 Add Recipe
-- Navigate to "Add Recipe".
-- Fill out the form with the recipe title, ingredients, steps, and optionally an image.
-- Click "Submit" to add your recipe.
 
 ❤️ Save & View Favorites
 - Click the heart icon to save a recipe.
