@@ -64,7 +64,7 @@ npm install
 ---
 
 ## 🌐 Live Demo
-🔗 View Live on Vercel
+🔗 https://res-pe.vercel.app/
 
 ---
 
