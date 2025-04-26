@@ -10,6 +10,7 @@
 - 📝 **Register/Login** – Create an account and securely log in.
 - ❤️ **Save Favorites** – Save your favorite dishes for quick access later.
 - 📱 **Responsive Design** – Works smoothly on desktop, tablet, and mobile.
+- 📱 **AI Response** – Get recepi from what ingredients you have with the help of AI.
 
 ---
 
@@ -51,6 +52,7 @@ npm install
 🔐 Register/Login
 - Click Sign Up to create a new account.
 - Already registered? Click Login to access your account.
+- Forgot password? Don't worry, easily change your password with change password section in login page
 
 ❤️ Save & View Favorites
 - Click the heart icon to save a recipe.
